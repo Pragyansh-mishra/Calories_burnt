@@ -1,0 +1,154 @@
+# 🔥 Calories Burnt Prediction System
+
+A Machine Learning-powered web application that predicts the number of calories burned based on user input such as age, weight, duration of exercise, heart rate, and body temperature.
+
+---
+
+## 🚀 Overview
+
+This project uses a trained Machine Learning model integrated with a Flask web application to provide real-time calorie burn predictions. It also stores user data and predictions in a database for future reference.
+
+---
+
+## 🧠 Features
+
+* 🔮 Predict calories burned using ML model
+* 📊 Takes multiple health inputs (age, weight, heart rate, etc.)
+* 💾 Stores prediction history in SQLite database
+* 🌐 REST API for predictions
+* 🖥️ Simple frontend using HTML templates
+* 📁 View all stored records
+
+---
+
+## ⚙️ Tech Stack
+
+* **Frontend:** HTML, CSS
+* **Backend:** Flask (Python)
+* **Machine Learning:** Scikit-learn / XGBoost (based on model.pkl)
+* **Database:** SQLite
+* **Libraries:** NumPy, Pickle
+
+---
+
+## 📂 Project Structure
+
+```
+Calories_burnt/
+│── app.py              # Main Flask application
+│── model.pkl           # Trained ML model
+│── scaler.pkl          # Feature scaler (optional)
+│── database.db         # SQLite database
+│── templates/          # HTML files
+│── static/             # CSS / JS files
+```
+
+---
+
+## 🛠️ Installation & Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Pragyansh-mishra/Calories_burnt.git
+cd Calories_burnt
+```
+
+2. Install dependencies:
+
+```bash
+pip install flask numpy scikit-learn
+```
+
+3. Run the application:
+
+```bash
+python app.py
+```
+
+4. Open in browser:
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
+## 📡 API Usage
+
+### 🔥 Predict Calories
+
+**Endpoint:**
+
+```
+POST /predict
+```
+
+**Sample JSON Input:**
+
+```json
+{
+  "Name": "John",
+  "Gender": 1,
+  "Age": 25,
+  "Height": 175,
+  "Weight": 70,
+  "Duration": 30,
+  "Heart_Rate": 120,
+  "Body_Temp": 37
+}
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "name": "John",
+  "calories_burned": 230.45
+}
+```
+
+---
+
+## 📊 View Records
+
+**Endpoint:**
+
+```
+GET /records
+```
+
+Returns all stored predictions from the database.
+
+---
+
+## 🔮 Future Improvements
+
+* Add user authentication system
+* Improve UI/UX design
+* Deploy on cloud (Render / AWS / Vercel)
+* Add graphs & analytics dashboard
+* Mobile-friendly design
+
+---
+
+## 👨‍💻 Author
+
+**Pragyansh Mishra**
+
+* GitHub: https://github.com/Pragyansh-mishra
+
+---
+
+## ⭐ Contribute
+
+Feel free to fork this repo and improve it!
+
+---
+
+## 📜 License
+
+This project is open-source and available under the MIT License.
+
+---
